@@ -11,7 +11,7 @@ class VideoSchema extends Schema {
       table.string('youtube_id', 20).notNullable()
       table.string('title', 150).notNullable()
       table.json('image')
-      table.integer('duration')
+      table.integer('duration').notNullable()
       table.timestamps()
     })
   }
