@@ -10,6 +10,7 @@ class GroupSchema extends Schema {
       table.string('name', 100).notNullable()
       table.string('description', 150)
       table.string('avatar', 10)
+      table.boolean('private').defaultTo(false).notNullable()
       table.timestamps()
     })
   }
