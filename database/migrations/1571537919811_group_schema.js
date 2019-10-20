@@ -9,6 +9,7 @@ class GroupSchema extends Schema {
       table.uuid('id').unique().defaultTo(this.db.raw('public.gen_random_uuid()')).notNullable()
       table.string('name', 100).notNullable()
       table.string('description', 150)
+      table.string('avatar', 10)
       table.timestamps()
     })
   }
