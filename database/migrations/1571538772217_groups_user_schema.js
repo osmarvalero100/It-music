@@ -6,9 +6,9 @@ const Schema = use('Schema')
 class GroupsUserSchema extends Schema {
   up () {
     this.create('groups_users', (table) => {
-      table.uuid('id').unique().defaultTo(this.db.raw('public.gen_random_uuid()')).notNullable
-      table.uuid('group_id').references('id').inTable('groups')
-      table.uuid('user_id').references('id').inTable('users')
+      table.uuid('id').unique().defaultTo(this.db.raw('public.gen_random_uuid()')).notNullable()
+      table.uuid('group_id').references('id').inTable('groups').notNullable()
+      table.uuid('user_id').references('id').inTable('users').notNullable()
       table.timestamps()
     })
   }
