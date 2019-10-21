@@ -9,6 +9,7 @@ class UserSchema extends Schema {
       table.uuid('id').unique().defaultTo(this.db.raw('public.gen_random_uuid()')).notNullable()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
+      table.json('roles')
       table.boolean('active').defaultTo(false)
       table.string('dj_name', 100).notNullable()
       table.string('avatar', 10)
