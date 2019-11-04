@@ -23,5 +23,5 @@ Route.get('/', () => {
 
 Route.group(() => {
   Route.get('/users/enable/:id', 'UserController.enable')
-  Route.post('/users/register', 'UserController.store').validator('User')
+  Route.post('/users', 'UserController.store').validator('User')
 }).prefix('api/v1');
