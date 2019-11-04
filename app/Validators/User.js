@@ -4,8 +4,9 @@ class User {
   get rules () {
     return {
       email: 'required|email|unique:users',
+      dj_name: 'required|unique:users',
+      gender: 'required',
       password: 'required',
-      dj_name: 'required|unique:users'
     }
   }
   get sanitizationRules () {
