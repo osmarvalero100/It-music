@@ -20,8 +20,8 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.get('/user', 'UserController.store')
 
 Route.group(() => {
+  Route.get('/users/enable/:id', 'UserController.enable')
   Route.post('/users/register', 'UserController.store').validator('User')
 }).prefix('api/v1');
